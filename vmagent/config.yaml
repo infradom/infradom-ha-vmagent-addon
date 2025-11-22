@@ -1,0 +1,47 @@
+name: Victoria Metrics Agent add-on
+version: "1.130.0"
+slug: victoria_metrics_agent
+description: Victoria Metrics Agent add-on for long term storage as replacement for Prometheus and InfluxDB
+webui: "http://[HOST]:[PORT:8429]/"
+ingress: true
+ingress_port: 8429
+ingress_entry: /targets
+# host_network: true
+ports:
+  8429/tcp: 8429
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+#  - i386
+init: false
+map:
+  - share:rw
+options:
+  remoteWriteURL: ""
+  additionalArguments: ""
+  enableHTTPAuth: false
+  username: ""
+  password: ""
+  enableNodeExporterScrape: false
+  enablePrometheusScrape: false
+  prometheusScrapeHTTPS: false
+  prometheusScrapeInterval: "20s"
+  prometheusScrapeTimeout: "15s"
+  longelivedToken: ""
+  homeassistantUrl: ""
+schema:
+  remoteWriteURL: "str?"
+  additionalArguments: "str?"
+  enableHTTPAuth: bool
+  username: "str?"
+  password: "password?"
+  enableNodeExporterScrape: bool
+  enablePrometheusScrape: bool
+  prometheusScrapeHTTPS: bool
+  prometheusScrapeInterval: "str?"
+  prometheusScrapeTimeout: "str?"
+  longelivedToken: "password?"
+  homeassistantUrl: "str?"
+
