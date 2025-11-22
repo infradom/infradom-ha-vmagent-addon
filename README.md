@@ -14,7 +14,7 @@ Inspired by (initially cloned from) https://github.com/lapo-luchini/homeassistan
 
 ## Installation and configuration
 
-1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Flapo-luchini%2Fhomeassistant-addon-vmagent) )
+1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2infradom%2Finfradom-ha-vmagent-addon) )
     * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/infradom/infradom-ha-vmagent-addon*
     * Refresh/reload your browser tab/window
 
