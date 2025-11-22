@@ -19,11 +19,15 @@ scrape_configs:
           - '{{regexReplaceAll ":[0-9]+$" .homeassistantUrl ":9100"}}'
 {{end}}
 
+
 {{if .enablePrometheusScrape}}
-  - job_name: 'home-assistant'
+  - job_name: 'hass'
     scrape_interval: '{{.prometheusScrapeInterval}}'
     scrape_timeout: '{{.prometheusScrapeTimeout}}'
     metrics_path: /api/prometheus
+    metric_relabel_configs:
+      - action: drop_metrics
+        regex: '{{.dropMetricsRegex}}' 
     authorization:
       credentials: "{{.token}}"
     scheme: {{ .scheme }}

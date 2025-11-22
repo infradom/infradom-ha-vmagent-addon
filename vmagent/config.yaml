@@ -14,26 +14,30 @@ arch:
   - armv7
   - aarch64
   - amd64
-#  - i386
 init: false
 map:
   - share:rw
 options:
-  remoteWriteURL: ""
+  source: ""
+  remoteWriteURL: "https://xxx.yy/api/v1/write"
   additionalArguments: ""
+  enableTCP6: true
   enableHTTPAuth: false
   username: ""
   password: ""
   enableNodeExporterScrape: false
   enablePrometheusScrape: false
   prometheusScrapeHTTPS: false
-  prometheusScrapeInterval: "20s"
-  prometheusScrapeTimeout: "15s"
+  prometheusScrapeInterval: "60s"
+  prometheusScrapeTimeout: "25s"
   longelivedToken: ""
-  homeassistantUrl: ""
+  homeassistantUrl: "ha_address:8123"
+  dropMetricsRegex: "drop__nothing" # example  "entity_available|last_updated_time_seconds|state_change_created|state_change_total"
 schema:
+  source: "str?"
   remoteWriteURL: "str?"
   additionalArguments: "str?"
+  enableTCP6: bool
   enableHTTPAuth: bool
   username: "str?"
   password: "password?"
@@ -44,4 +48,5 @@ schema:
   prometheusScrapeTimeout: "str?"
   longelivedToken: "password?"
   homeassistantUrl: "str?"
+  dropMetricsRegex: "str?"
 

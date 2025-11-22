@@ -12,6 +12,13 @@ then
     HTTPAUTHARGS="-httpAuth.username=$(bashio::config 'username') -httpAuth.password=$(bashio::config 'password')"
 fi
 
+TCPARG = ""
+if bashio::config.true 'enableTCP6'
+then
+    TCPARG = '-enableTCP6'
+fi
+
+
 PROMETHEUSARGS=""
 bashio::log.info "Use promscrape config for Victoria Metrics"
 SCHEME="http"
@@ -19,11 +26,11 @@ if bashio::config.true 'prometheusScrapeHTTPS'
 then
     SCHEME="https"
 fi
-echo '{"token": "'$(bashio::config 'longelivedToken')'", "scheme": "'$SCHEME'", "homeassistantUrl": "'$(bashio::config 'homeassistantUrl')'", "prometheusScrapeInterval": "'$(bashio::config 'prometheusScrapeInterval')'", "prometheusScrapeTimeout": "'$(bashio::config 'prometheusScrapeTimeout')'", "enablePrometheusScrape": '$(bashio::config 'enablePrometheusScrape')', "enableNodeExporterScrape": '$(bashio::config 'enableNodeExporterScrape')'}' | tempio -template /prometheus.tpl -out /prometheus.yml
+echo '{"token": "'$(bashio::config 'longelivedToken')'", "scheme": "'$SCHEME'", "homeassistantUrl": "'$(bashio::config 'homeassistantUrl')'", "prometheusScrapeInterval": "'$(bashio::config 'prometheusScrapeInterval')'", "prometheusScrapeTimeout": "'$(bashio::config 'prometheusScrapeTimeout')'", "enablePrometheusScrape": '$(bashio::config 'enablePrometheusScrape')', "enableNodeExporterScrape": '$(bashio::config 'enableNodeExporterScrape')',  "source": '$(bashio::config 'source')', "dropMetricsRegex": '$(bashio::config 'dropMetricsRegex')'  }' | tempio -template /prometheus.tpl -out /prometheus.yml
 PROMETHEUSARGS="-promscrape.config /prometheus.yml"
 
 
 bashio::log.info "Starting Victoria Metrics with remote write to $REMOTE_URL"
 bashio::log.info "Starting Victoria Metrics Agent with args set to $ARGS"
-/vmagent-prod -remoteWrite.tmpDataPath /share/vmagent-data -remoteWrite.url "$REMOTE_URL" $HTTPAUTHARGS $PROMETHEUSARGS $ARGS
+/vmagent-prod -remoteWrite.tmpDataPath /share/vmagent-data -remoteWrite.url "$REMOTE_URL" $TCPARGS $HTTPAUTHARGS $PROMETHEUSARGS $ARGS
 

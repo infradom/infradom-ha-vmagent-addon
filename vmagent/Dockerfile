@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 COPY start-vmagent /
 COPY prometheus.tpl /
 WORKDIR /share/vmagent-data
-ARG VERSION=v1.126.0
+ARG VERSION=v1.130.0
 
 RUN /bin/bash -c 'set -ex && \
     ARCH=$(uname -m) && \
@@ -23,4 +23,4 @@ RUN /bin/bash -c 'set -ex && \
 RUN chmod a+x /vmagent-prod
 RUN chmod a+x /start-vmagent
 
-CMD [ "/start-vmagent"]
+CMD [ "/start-vmagsent"]
