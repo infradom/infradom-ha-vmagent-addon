@@ -1,5 +1,8 @@
 # Home Assistant Add-on : vmagent process to send metrics to VictoriaMetrics backend
 
+
+### WORK IN PROGRESS - Do not use yet
+
 If you are looking for an efficient and easy to use way for long term storage of your Home Assistant data - just use VictoriaMetrics.
 
 This add-on makes it easy to scrape (i.e. fetch) metrics locally, cache them in a temporary database, and send them to your centralized Victoria Metrics Time Series Database as soon as is is reachable, thus allowing to have full data even if the database is down or unreachable at times.
@@ -12,7 +15,7 @@ Inspired by (initially cloned from) https://github.com/lapo-luchini/homeassistan
 ## Installation and configuration
 
 1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Flapo-luchini%2Fhomeassistant-addon-vmagent) )
-    * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/infradom/homeassistant-addon-vmagent*
+    * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/infradom/infradom-ha-vmagent-addon*
     * Refresh/reload your browser tab/window
 
 2. **Install** the add-on:
