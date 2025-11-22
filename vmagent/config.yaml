@@ -23,6 +23,7 @@ options:
   additionalArguments: ""
   enableTCP6: true
   enableHTTPAuth: false
+  remoteWriteHTTPAuth: false
   username: ""
   password: ""
   enableNodeExporterScrape: false
@@ -39,6 +40,7 @@ schema:
   additionalArguments: "str?"
   enableTCP6: bool
   enableHTTPAuth: bool
+  remoteWriteHTTPAuth: bool
   username: "str?"
   password: "password?"
   enableNodeExporterScrape: bool

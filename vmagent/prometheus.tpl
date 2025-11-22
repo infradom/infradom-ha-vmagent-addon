@@ -27,7 +27,7 @@ scrape_configs:
     metrics_path: /api/prometheus
     metric_relabel_configs:
       - action: drop_metrics
-        regex: '{{.dropMetricsRegex}}' 
+        regex: {{.dropMetricsRegex}} 
     authorization:
       credentials: "{{.token}}"
     scheme: {{ .scheme }}

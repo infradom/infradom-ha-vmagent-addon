@@ -23,4 +23,4 @@ RUN /bin/bash -c 'set -ex && \
 RUN chmod a+x /vmagent-prod
 RUN chmod a+x /start-vmagent
 
-CMD [ "/start-vmagsent"]
+CMD [ "/start-vmagent"]
