@@ -24,7 +24,9 @@ Inspired by (initially cloned from) https://github.com/lapo-luchini/homeassistan
 3. Make sure your (remote) victoriametrics backend is running and reachable
 
 4. Configure Victoria Metrics agent
-   > Read the [addon documentation](DOCS.md) which can also be found on the **Documentation tab** of the [Victoria Metrics Agent addon](https://my.home-assistant.io/redirect/supervisor_store/) in the Home Assistant settings.
+   * Use the dropMetricsRexex field to specify metrics that need to be dropped: example 'entity_available|last_updated_time_seconds|state_change_created|state_change_total' (with quotes seems to work)
+   * Homeassistant URL needs to be entered without scheme: ip_or_name:8123
+   * Either HTTPAuth or remoteWriteHTTPAuth can be used to apply the username and password fields (unclear when which option works). I use remoteWriteHTTPAuth, my victoriametrics server is behind an authenticating proxy
 
 
 5. **Add the *prometheus* integration** to your Home Assistant configuration (or alternatively, not tested, the *influxdb* integration). I use the prometheus scaping/pull model locally, mainly because entities that do not change frequently are logged periodically. 
