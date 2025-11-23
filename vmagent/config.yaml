@@ -6,6 +6,8 @@ webui: "http://[HOST]:[PORT:8429]/"
 ingress: true
 ingress_port: 8429
 ingress_entry: /targets
+startup: services
+boot: auto
 # host_network: true
 ports:
   8429/tcp: 8429

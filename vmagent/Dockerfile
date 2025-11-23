@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Copy data for add-on
-COPY start-vmagent /
+COPY run.sh /
 COPY prometheus.tpl /
 WORKDIR /share/vmagent-data
 ARG VERSION=v1.130.0
@@ -21,6 +21,6 @@ RUN /bin/bash -c 'set -ex && \
     fi'
 
 RUN chmod a+x /vmagent-prod
-RUN chmod a+x /start-vmagent
+RUN chmod a+x /run.sh
 
-CMD [ "/start-vmagent"]
+CMD [ "/run.sh"]

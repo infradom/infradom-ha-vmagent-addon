@@ -1,0 +1,13 @@
+{
+  "name": "Infradom Add-ons",
+  "url": "https://github.com/infradom/infradom-ha-vmagent-addon",
+  "maintainers": ["infradom"],
+  "addons": [
+    {
+      "name": "VM Agent",
+      "slug": "vmagent",
+      "description": "VictoriaMetrics vmagent addon for Home Assistant",
+      "url": "https://raw.githubusercontent.com/infradom/infradom-ha-vmagent-addon/main/vmagent"
+    }
+  ]
+}
