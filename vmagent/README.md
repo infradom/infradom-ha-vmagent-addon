@@ -1,8 +1,6 @@
 # Home Assistant Add-on : vmagent process to send metrics to VictoriaMetrics backend
 
 
-### WORK IN PROGRESS - Do not use yet
-
 If you are looking for an efficient and easy to use way for long term storage of your Home Assistant data - just use VictoriaMetrics.
 
 This add-on makes it easy to scrape (i.e. fetch) metrics locally, cache them in a temporary database, and send them to your centralized Victoria Metrics Time Series Database as soon as is is reachable, thus allowing to have full data even if the database is down or unreachable at times.
@@ -26,7 +24,7 @@ Inspired by (initially cloned from) https://github.com/lapo-luchini/homeassistan
 4. Configure Victoria Metrics agent
    * Use the dropMetricsRexex field to specify metrics that need to be dropped: example 'entity_available|last_updated_time_seconds|state_change_created|state_change_total' (with quotes seems to work)
    * Homeassistant URL needs to be entered without scheme: ip_or_name:8123
-   * Either HTTPAuth or remoteWriteHTTPAuth can be used to apply the username and password fields (unclear when which option works). I use remoteWriteHTTPAuth, my victoriametrics server is behind an authenticating proxy
+   * Either HTTPAuth or remoteWriteHTTPAuth can be used to apply the username and password fields (unclear when which option works). I use remoteWriteHTTPAuth, my victoriametrics server is behind an authenticating reverse proxy
 
 
 5. **Add the *prometheus* integration** to your Home Assistant configuration (or alternatively, not tested, the *influxdb* integration). I use the prometheus scaping/pull model locally, mainly because entities that do not change frequently are logged periodically. 
