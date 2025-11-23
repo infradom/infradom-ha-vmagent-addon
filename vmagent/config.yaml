@@ -32,7 +32,7 @@ options:
   prometheusScrapeInterval: "60s"
   prometheusScrapeTimeout: "25s"
   longelivedToken: ""
-  homeassistantUrl: "ha_address:8123"
+  homeassistantUrl: "localhost:8123"
   dropMetricsRegex: "drop__nothing" # example  "entity_available|last_updated_time_seconds|state_change_created|state_change_total"
 schema:
   source: "str?"
