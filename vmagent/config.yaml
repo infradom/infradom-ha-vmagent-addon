@@ -8,7 +8,7 @@ ingress_port: 8429
 ingress_entry: /targets
 startup: services
 boot: auto
-# host_network: true
+host_network: true
 ports:
   8429/tcp: 8429
 arch:
@@ -35,7 +35,7 @@ options:
   prometheusScrapeTimeout: "25s"
   longelivedToken: ""
   homeassistantUrl: "localhost:8123"
-  dropMetricsRegex: "drop__nothing" # example  "entity_available|last_updated_time_seconds|state_change_created|state_change_total"
+  dropMetricsRegex: "'entity_available|last_updated_time_seconds|state_change_created|state_change_total'"
 schema:
   source: "str?"
   remoteWriteURL: "str?"
