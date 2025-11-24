@@ -1,5 +1,5 @@
 name: Victoriametrics Agent add-on
-version: "1.130.0"
+version: "1.130.0.2"
 slug: victoria_metrics_agent
 description: Victoriametrics Agent add-on for long term storage as replacement for Prometheus and InfluxDB
 webui: "http://[HOST]:[PORT:8429]/"
@@ -8,7 +8,7 @@ ingress_port: 8429
 ingress_entry: /targets
 startup: services
 boot: auto
-host_network: true
+host_network: true # may not be needed
 ports:
   8429/tcp: 8429
 arch:
